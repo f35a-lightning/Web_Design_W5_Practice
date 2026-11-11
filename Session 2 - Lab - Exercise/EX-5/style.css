@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #eef2f5;
+  color: #333333;
+  padding: 20px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.banner {
+  grid-area: banner;
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.courses {
+  grid-area: courses;
+}
+
+.tasks {
+  grid-area: tasks;
+}
+.dash-area {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+}
+
+.dashboard-layout {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "sidebar"
+    "banner"
+    "stats"
+    "courses"
+    "tasks";
+}
+
+@media (min-width: 600px) {
+  .dashboard-layout {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "sidebar banner"
+      "sidebar stats"
+      "courses courses"
+      "tasks   tasks";
+  }
+}
+
+@media (min-width: 900px) {
+  .dashboard-layout {
+    grid-template-columns: 220px 1fr 1fr;
+    grid-template-areas:
+      "sidebar banner  banner"
+      "sidebar stats   stats"
+      "sidebar courses tasks";
+  }
+}
+
+.sidebar {
+  background-color: #1e293b;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: 1px solid #334155;
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.menu-toggle:hover {
+  background-color: #334155;
+}
+
+.sidebar-content {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Toggled open class */
+.sidebar-content.open {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  background-color: #334155;
+}
+
+.user-profile {
+  padding-top: 16px;
+  border-top: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+.user-profile span {
+  color: #94a3b8;
+}
+
+@media (min-width: 900px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex: 1;
+    margin-top: 24px;
+  }
+
+  .user-profile {
+    margin-top: auto;
+  }
+}
+
+.banner {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+}
+
+.banner h1 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.banner p {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  padding: 16px;
+}
+
+.stat-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+
+.stat-card .label {
+  font-size: 0.78rem;
+  color: #64748b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-card h3 {
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+/* Course and task list items */
+.item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.item-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.badge.blue {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge.green {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.due {
+  font-size: 0.8rem;
+  color: #e11d48;
+  font-weight: bold;
+}

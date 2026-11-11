@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EX 5</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+
+    <aside class="dash-area sidebar">
+      <div class="sidebar-top">
+        <h2>Student Hub</h2>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </div>
+
+      <div class="sidebar-content" id="sidebarContent">
+        <nav class="nav-links">
+          <a href="#" class="active">Overview</a>
+          <a href="#">Courses</a>
+          <a href="#">Assignments</a>
+          <a href="#">Grades</a>
+          <a href="#">Settings</a>
+        </nav>
+        <div class="user-profile">
+          <strong>Alex Chen</strong>
+          <span>Year 2 Student</span>
+        </div>
+      </div>
+    </aside>
+
+    <header class="dash-area banner">
+      <h1>Welcome back, Lightning!</h1>
+      <p>You have 3 assignments due this week and 1 upcoming quiz.</p>
+    </header>
+
+    <section class="dash-area stats">
+      <div class="stat-card">
+        <span class="label">Current GPA</span>
+        <h3>3.82</h3>
+      </div>
+      <div class="stat-card">
+        <span class="label">Attendance</span>
+        <h3>94%</h3>
+      </div>
+      <div class="stat-card">
+        <span class="label">Completed Labs</span>
+        <h3>18 / 20</h3>
+      </div>
+    </section>
+
+    <article class="dash-area courses">
+      <h3>Enrolled Courses</h3>
+      <ul class="item-list">
+        <li>
+          <span>Fundamental Web Design</span>
+          <span class="badge blue">Week 5</span>
+        </li>
+        <li>
+          <span>Database Analysis and Design</span>
+          <span class="badge green">In Progress</span>
+        </li>
+        <li>
+          <span>Data Structure and Algorithms</span>
+          <span class="badge blue">Week 5</span>
+        </li>
+      </ul>
+    </article>
+
+    <article class="dash-area tasks">
+      <h3>Upcoming Tasks</h3>
+      <ul class="item-list">
+        <li>
+          <span>CSS Grid Practice Lab</span>
+          <span class="due">Tomorrow</span>
+        </li>
+        <li>
+          <span>SQL Normalization Quiz</span>
+          <span class="due">Friday</span>
+        </li>
+        <li>
+          <span>Algorithms Problem Set 3</span>
+          <span class="due">Next Mon</span>
+        </li>
+      </ul>
+    </article>
+
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebarContent = document.getElementById('sidebarContent');
+
+    if (menuToggle && sidebarContent) {
+      menuToggle.addEventListener('click', () => {
+        sidebarContent.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
